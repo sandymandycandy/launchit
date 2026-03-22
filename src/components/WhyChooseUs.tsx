@@ -40,7 +40,7 @@ export default function WhyChooseUs() {
   const { t } = useTranslation('common');
 
   return (
-    <section id="why" className="relative py-24 bg-dark-base overflow-hidden">
+    <section id="why" className="relative py-24 overflow-hidden">
       {/* Background radial glow */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -57,6 +57,12 @@ export default function WhyChooseUs() {
           className="text-center max-w-2xl mx-auto mb-16"
           data-aos="fade-up"
         >
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand/30 bg-brand/10 mb-5">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse-slow" />
+            <span className="text-brand text-xs font-semibold uppercase tracking-widest font-body">
+              {t('why.pill')}
+            </span>
+          </div>
           <h2 className="section-heading text-3xl sm:text-4xl lg:text-5xl mb-5">
             {t('why.headline').split(' ').slice(0, -2).join(' ')}{' '}
             <span className="text-gradient">

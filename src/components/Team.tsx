@@ -51,7 +51,7 @@ export default function Team() {
   return (
     <section
       id="team"
-      className="relative py-24 bg-dark-base overflow-hidden"
+      className="relative py-24 bg-white/[0.018] overflow-hidden"
     >
       {/* Subtle central radial teal glow */}
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
@@ -150,7 +150,7 @@ export default function Team() {
                 {member.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="bg-dark-surface border border-white/10 text-slate-300 text-xs px-2 py-1 rounded-full font-body"
+                    className="bg-white/[0.05] border border-white/10 text-slate-300 text-xs px-2 py-1 rounded-full font-body"
                   >
                     {tag}
                   </span>

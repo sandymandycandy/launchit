@@ -1,29 +1,32 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Cookie, X } from 'lucide-react';
+import { useCookieConsent } from '../hooks/useCookieConsent';
 
 export default function CookieBanner() {
-  const { i18n } = useTranslation();
+  const { t } = useTranslation('common');
+  const { consent, accept, decline } = useCookieConsent();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const accepted = localStorage.getItem('elit_cookies');
-    if (!accepted) setTimeout(() => setVisible(true), 1500);
-  }, []);
+    if (consent === 'pending') {
+      const timer = setTimeout(() => setVisible(true), 1500);
+      return () => clearTimeout(timer);
+    }
+    setVisible(false);
+  }, [consent]);
 
-  const accept = () => {
-    localStorage.setItem('elit_cookies', 'accepted');
+  const handleAccept = () => {
+    accept();
     setVisible(false);
   };
 
-  const decline = () => {
-    localStorage.setItem('elit_cookies', 'declined');
+  const handleDecline = () => {
+    decline();
     setVisible(false);
   };
 
   if (!visible) return null;
-
-  const isFr = i18n.language === 'fr';
 
   return (
     <div className="fixed bottom-6 left-4 right-4 sm:left-6 sm:right-auto sm:max-w-md z-[60] animate-slide-up">
@@ -34,16 +37,14 @@ export default function CookieBanner() {
           </div>
           <div>
             <p className="text-white font-semibold text-sm font-heading mb-1">
-              {isFr ? '🍪 Cookies & Confidentialité' : '🍪 Cookies & Privacy'}
+              {t('cookie.title')}
             </p>
             <p className="text-slate-400 text-xs leading-relaxed">
-              {isFr
-                ? 'Nous utilisons des cookies pour améliorer votre expérience sur notre site. En continuant, vous acceptez notre politique de confidentialité.'
-                : 'We use cookies to improve your experience. By continuing, you accept our privacy policy.'}
+              {t('cookie.desc')}
             </p>
           </div>
           <button
-            onClick={decline}
+            onClick={handleDecline}
             className="shrink-0 text-slate-500 hover:text-white transition-colors"
             aria-label="Close"
           >
@@ -51,17 +52,11 @@ export default function CookieBanner() {
           </button>
         </div>
         <div className="flex gap-3">
-          <button
-            onClick={accept}
-            className="flex-1 btn-primary text-xs py-2 px-4"
-          >
-            {isFr ? 'Accepter' : 'Accept'}
+          <button onClick={handleAccept} className="flex-1 btn-primary text-xs py-2 px-4">
+            {t('cookie.accept')}
           </button>
-          <button
-            onClick={decline}
-            className="flex-1 btn-secondary text-xs py-2 px-4"
-          >
-            {isFr ? 'Refuser' : 'Decline'}
+          <button onClick={handleDecline} className="flex-1 btn-secondary text-xs py-2 px-4">
+            {t('cookie.decline')}
           </button>
         </div>
       </div>

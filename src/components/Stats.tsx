@@ -75,7 +75,7 @@ function StatItem({ stat }: { stat: StatItem }) {
 
 export default function Stats() {
   return (
-    <section className="relative py-16 bg-dark-surface/50 overflow-hidden">
+    <section className="relative py-16 bg-white/[0.028] overflow-hidden">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand/50 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-brand/50 to-transparent" />
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">

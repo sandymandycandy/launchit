@@ -19,7 +19,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-dark-surface border-t border-white/5 overflow-hidden">
+    <footer className="relative bg-[#020810]/90 backdrop-blur-2xl border-t border-white/[0.06] overflow-hidden">
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand/5 blur-[120px] rounded-full" />

@@ -31,7 +31,7 @@ export default function Navbar({ onLangChange, currentLang }: NavbarProps) {
 
   // Active section tracking
   useEffect(() => {
-    const sectionIds = ['hero', 'services', 'about', 'team', 'portfolio', 'testimonials', 'contact'];
+    const sectionIds = ['hero', 'services', 'pricing', 'about', 'team', 'portfolio', 'testimonials', 'contact'];
     const observers: IntersectionObserver[] = [];
     sectionIds.forEach((id) => {
       const el = document.getElementById(id);
@@ -99,6 +99,7 @@ export default function Navbar({ onLangChange, currentLang }: NavbarProps) {
   const navLinks = [
     { key: 'home', href: '#', section: 'hero' },
     { key: 'about', href: '#about', section: 'about' },
+    { key: 'pricing', href: '#pricing', section: 'pricing' },
     { key: 'portfolio', href: '#portfolio', section: 'portfolio' },
     { key: 'contact', href: '#contact', section: 'contact' },
   ];

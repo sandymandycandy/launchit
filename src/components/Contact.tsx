@@ -23,7 +23,7 @@ interface FormFields {
 /* ── Shared input / select class ────────────────────────────────────────────── */
 
 const INPUT_CLASS =
-  'w-full bg-dark-base/60 border border-white/10 rounded-xl px-4 py-3 text-white ' +
+  'w-full bg-white/[0.04] border border-white/10 rounded-xl px-4 py-3 text-white ' +
   'placeholder-slate-500 focus:outline-none focus:border-brand/60 focus:ring-1 ' +
   'focus:ring-brand/30 transition-all font-body text-sm';
 
@@ -68,7 +68,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative w-full py-24 bg-dark-surface/30 overflow-hidden"
+      className="relative w-full py-24 bg-white/[0.018] overflow-hidden"
     >
       {/* ── Background radial brand glow ──────────────────────────────────── */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
@@ -86,7 +86,7 @@ export default function Contact() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand/30 bg-brand/10 mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse-slow" />
             <span className="text-brand text-xs font-semibold uppercase tracking-widest font-body">
-              Contact
+              {t('nav.contact')}
             </span>
           </div>
           <h2 className="section-heading text-3xl sm:text-4xl lg:text-5xl mb-5">

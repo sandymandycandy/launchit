@@ -5,7 +5,15 @@ export default function FinalCTA() {
   const { t } = useTranslation('common');
 
   return (
-    <section className="relative w-full py-24 bg-dark-base overflow-hidden">
+    <section id="cta" className="relative w-full py-24 overflow-hidden">
+      {/* Background photo */}
+      <div aria-hidden="true" className="absolute inset-0 pointer-events-none overflow-hidden">
+        <img
+          src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover opacity-[0.04]"
+        />
+      </div>
       {/* Dramatic radial teal glow background */}
       <div
         className="absolute inset-0 pointer-events-none"

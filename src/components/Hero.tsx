@@ -1,16 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { ArrowRight, ChevronRight, Sparkles } from 'lucide-react';
 
-interface StatBadge {
-  value: string;
-  label: string;
-  icon: string;
-}
-
-const statBadges: StatBadge[] = [
-  { value: '25+', label: 'Projects', icon: '🗂️' },
-  { value: '98%', label: 'Satisfaction', icon: '⭐' },
-  { value: '15+', label: 'Experts', icon: '👨‍💻' },
+const statBadges: { value: string; labelKey: string; icon: string }[] = [
+  { value: '25+', labelKey: 'hero.stat_projects', icon: '🗂️' },
+  { value: '98%', labelKey: 'hero.stat_satisfaction', icon: '⭐' },
+  { value: '15+', labelKey: 'hero.stat_experts', icon: '👨‍💻' },
 ];
 
 function renderHeadlineWithGradient(headline: string): React.ReactNode {
@@ -48,7 +42,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-dark-base"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
     >
       {/* ── Layered background glows ─────────────────────────────────────────── */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
@@ -100,7 +94,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full section-label"
         >
           <Sparkles size={13} className="text-brand" />
-          <span>Solutions Numériques</span>
+          <span>{t('hero.badge')}</span>
           <ChevronRight size={13} className="text-brand/60" />
         </div>
 
@@ -161,6 +155,35 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* ── Social proof photo strip ─────────────────────────────────────────── */}
+      <div
+        data-aos="fade-up"
+        data-aos-delay="520"
+        aria-hidden="true"
+        className="flex items-center justify-center gap-2 mt-2"
+      >
+        <div className="flex -space-x-2">
+          {[
+            'https://i.pravatar.cc/40?img=1',
+            'https://i.pravatar.cc/40?img=5',
+            'https://i.pravatar.cc/40?img=12',
+            'https://i.pravatar.cc/40?img=20',
+            'https://i.pravatar.cc/40?img=33',
+          ].map((src, i) => (
+            <img
+              key={i}
+              src={src}
+              alt=""
+              className="w-8 h-8 rounded-full border-2 object-cover"
+              style={{ borderColor: 'rgba(77,187,176,0.5)' }}
+            />
+          ))}
+        </div>
+        <span className="text-slate-400 text-xs font-body ml-1">
+          <span className="text-brand font-semibold">+50</span> {t('hero.social_proof')}
+        </span>
+      </div>
+
       {/* ── Bottom gradient fade ──────────────────────────────────────────────── */}
       <div
         aria-hidden="true"
@@ -190,7 +213,8 @@ export default function Hero() {
   );
 }
 
-function StatBadgeCard({ stat }: { stat: StatBadge }) {
+function StatBadgeCard({ stat }: { stat: { value: string; labelKey: string; icon: string } }) {
+  const { t } = useTranslation('common');
   return (
     <div className="glass-card flex items-center gap-3 px-5 py-3 rounded-2xl">
       <span className="text-2xl leading-none" aria-hidden="true">{stat.icon}</span>
@@ -198,7 +222,7 @@ function StatBadgeCard({ stat }: { stat: StatBadge }) {
         <span className="font-heading font-bold text-xl text-white leading-none glow-brand">
           {stat.value}
         </span>
-        <span className="text-xs text-slate-400 font-body mt-0.5">{stat.label}</span>
+        <span className="text-xs text-slate-400 font-body mt-0.5">{t(stat.labelKey)}</span>
       </div>
     </div>
   );

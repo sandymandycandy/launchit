@@ -33,19 +33,19 @@
   /* ── Premium Glass Card ─────────────────────────────────────────────────── */
   .glass-card {
     @apply relative rounded-2xl transition-all duration-500;
-    background: rgba(13, 20, 36, 0.6) padding-box,
-                linear-gradient(145deg, rgba(77,187,176,0.35) 0%, rgba(255,255,255,0.04) 45%, rgba(77,187,176,0.12) 100%) border-box;
+    background: rgba(10, 16, 30, 0.45) padding-box,
+                linear-gradient(145deg, rgba(77,187,176,0.40) 0%, rgba(255,255,255,0.05) 45%, rgba(77,187,176,0.15) 100%) border-box;
     border: 1px solid transparent;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.07);
   }
 
   .glass-card:hover {
-    background: rgba(13, 20, 36, 0.75) padding-box,
-                linear-gradient(145deg, rgba(77,187,176,0.65) 0%, rgba(255,255,255,0.08) 45%, rgba(77,187,176,0.35) 100%) border-box;
+    background: rgba(10, 16, 30, 0.6) padding-box,
+                linear-gradient(145deg, rgba(77,187,176,0.70) 0%, rgba(255,255,255,0.09) 45%, rgba(77,187,176,0.40) 100%) border-box;
     transform: translateY(-6px);
-    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55), 0 0 50px rgba(77, 187, 176, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5), 0 0 60px rgba(77, 187, 176, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
   /* ── Primary Button with shimmer ────────────────────────────────────────── */
@@ -152,6 +152,43 @@
   .glow-text {
     text-shadow: 0 0 20px rgba(77, 187, 176, 0.5);
   }
+}
+
+/* ── Skeleton shimmer ──────────────────────────────────────────────────── */
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(77, 187, 176, 0.04) 0%,
+    rgba(77, 187, 176, 0.12) 40%,
+    rgba(77, 187, 176, 0.04) 80%
+  );
+  background-size: 300% 100%;
+  animation: skeleton-sweep 1.8s ease-in-out infinite;
+}
+
+@keyframes skeleton-sweep {
+  0% { background-position: 200% 0; }
+  100% { background-position: -100% 0; }
+}
+
+/* ── Skeleton fade-out ─────────────────────────────────────────────────── */
+.skeleton-fade-out {
+  animation: skeleton-exit 0.5s ease-out forwards;
+}
+
+@keyframes skeleton-exit {
+  0% { opacity: 1; }
+  100% { opacity: 0; pointer-events: none; }
+}
+
+/* ── App fade-in ───────────────────────────────────────────────────────── */
+.app-fade-in {
+  animation: app-enter 0.6s ease-out forwards;
+}
+
+@keyframes app-enter {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 /* ── AOS pointer-events fix ─────────────────────────────────────────────── */

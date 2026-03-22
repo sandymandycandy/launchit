@@ -135,7 +135,7 @@ function ProjectCard({ project }: ProjectCardProps) {
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="inline-flex items-center px-2 py-0.5 rounded-full bg-dark-base border border-slate-700/60 text-slate-400 text-[10px] font-medium font-body tracking-wide"
+              className="inline-flex items-center px-2 py-0.5 rounded-full bg-white/[0.04] border border-white/10 text-slate-400 text-[10px] font-medium font-body tracking-wide"
             >
               {tag}
             </span>
@@ -166,7 +166,7 @@ export default function Portfolio() {
   return (
     <section
       id="portfolio"
-      className="relative w-full py-24 bg-dark-surface/30 overflow-hidden"
+      className="relative w-full py-24 overflow-hidden"
     >
       {/* ── Background radial glows ─────────────────────────────────────── */}
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
@@ -188,7 +188,7 @@ export default function Portfolio() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand/30 bg-brand/10 mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse" />
             <span className="text-brand text-xs font-semibold uppercase tracking-widest font-body">
-              Portfolio
+              {t('nav.portfolio')}
             </span>
           </div>
 

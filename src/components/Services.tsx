@@ -36,13 +36,15 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative w-full py-24 bg-dark-base overflow-hidden"
+      className="relative w-full py-24 overflow-hidden"
     >
-      {/* Background brand glow */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 pointer-events-none"
-      >
+      {/* Background photo with overlay */}
+      <div aria-hidden="true" className="absolute inset-0 pointer-events-none overflow-hidden">
+        <img
+          src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover opacity-[0.04]"
+        />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full bg-brand/5 blur-[140px]" />
         <div className="absolute top-0 left-1/4 w-[400px] h-[300px] rounded-full bg-brand/4 blur-[100px]" />
         <div className="absolute bottom-0 right-1/4 w-[400px] h-[300px] rounded-full bg-brand/4 blur-[100px]" />
@@ -62,9 +64,8 @@ export default function Services() {
             </span>
           </div>
           <h2 className="section-heading text-3xl sm:text-4xl lg:text-5xl mb-5">
-            Nos{' '}
-            <span className="text-gradient">Solutions</span>{' '}
-            Numériques
+            {t('services.heading').split(' ').slice(0, -1).join(' ')}{' '}
+            <span className="text-gradient">{t('services.heading').split(' ').slice(-1)}</span>
           </h2>
           <p className="section-sub text-base sm:text-lg max-w-2xl mx-auto">
             {t('services.subheadline')}
