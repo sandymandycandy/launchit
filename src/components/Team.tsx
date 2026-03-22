@@ -6,6 +6,7 @@ interface TeamMember {
   roleKey: string;
   bioKey: string;
   initial: string;
+  avatarUrl: string;
   tags: string[];
   delay: number;
   linkedinHref: string;
@@ -17,6 +18,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     roleKey: 'team.thomas_role',
     bioKey: 'team.thomas_bio',
     initial: 'T',
+    avatarUrl: 'https://i.pravatar.cc/200?img=68',
     tags: ['Web Dev', 'Strategy', 'Leadership'],
     delay: 0,
     linkedinHref: '#',
@@ -26,6 +28,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     roleKey: 'team.sophie_role',
     bioKey: 'team.sophie_bio',
     initial: 'S',
+    avatarUrl: 'https://i.pravatar.cc/200?img=47',
     tags: ['Full-Stack', 'Architecture', 'DevOps'],
     delay: 150,
     linkedinHref: '#',
@@ -35,6 +38,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     roleKey: 'team.emilie_role',
     bioKey: 'team.emilie_bio',
     initial: 'É',
+    avatarUrl: 'https://i.pravatar.cc/200?img=49',
     tags: ['Agile', 'UX', 'Client Relations'],
     delay: 300,
     linkedinHref: '#',
@@ -102,10 +106,23 @@ export default function Team() {
                   aria-hidden="true"
                   className="absolute inset-0 rounded-full bg-brand/15 blur-md scale-125 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 />
-                {/* Avatar circle */}
+                {/* Avatar photo */}
+                <img
+                  src={member.avatarUrl}
+                  alt={t(member.nameKey)}
+                  width={80}
+                  height={80}
+                  className="relative w-20 h-20 rounded-full object-cover ring-2 ring-brand/40 shadow-brand"
+                  onError={(e) => {
+                    const el = e.currentTarget;
+                    el.style.display = 'none';
+                    (el.nextElementSibling as HTMLElement | null)?.style.setProperty('display', 'flex');
+                  }}
+                />
+                {/* Fallback initial */}
                 <div
-                  className="relative w-20 h-20 rounded-full bg-gradient-to-br from-brand to-[#2A9D91] flex items-center justify-center ring-2 ring-brand/40 shadow-brand"
-                  style={{ width: '80px', height: '80px' }}
+                  className="relative w-20 h-20 rounded-full bg-gradient-to-br from-brand to-[#2A9D91] items-center justify-center ring-2 ring-brand/40 shadow-brand"
+                  style={{ display: 'none' }}
                 >
                   <span className="font-heading font-bold text-white text-3xl leading-none select-none">
                     {member.initial}

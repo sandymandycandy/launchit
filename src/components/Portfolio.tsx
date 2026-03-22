@@ -14,6 +14,7 @@ import {
 interface ProjectData {
   key: 'p1' | 'p2' | 'p3' | 'p4' | 'p5' | 'p6';
   icon: React.ReactNode;
+  imageUrl: string;
   tags: string[];
   delay: number;
 }
@@ -23,37 +24,43 @@ interface ProjectData {
 const PROJECTS: ProjectData[] = [
   {
     key: 'p1',
-    icon: <Smartphone size={40} strokeWidth={1.5} />,
+    icon: <Smartphone size={22} strokeWidth={1.5} />,
+    imageUrl: 'https://picsum.photos/seed/mobiurban/800/420',
     tags: ['React Native', 'Node.js', 'MongoDB'],
     delay: 0,
   },
   {
     key: 'p2',
-    icon: <BarChart2 size={40} strokeWidth={1.5} />,
+    icon: <BarChart2 size={22} strokeWidth={1.5} />,
+    imageUrl: 'https://picsum.photos/seed/financeflow/800/420',
     tags: ['React', 'Python', 'PostgreSQL'],
     delay: 100,
   },
   {
     key: 'p3',
-    icon: <ShoppingCart size={40} strokeWidth={1.5} />,
+    icon: <ShoppingCart size={22} strokeWidth={1.5} />,
+    imageUrl: 'https://picsum.photos/seed/shopelite/800/420',
     tags: ['Next.js', 'Stripe', 'Tailwind CSS'],
     delay: 200,
   },
   {
     key: 'p4',
-    icon: <Globe size={40} strokeWidth={1.5} />,
+    icon: <Globe size={22} strokeWidth={1.5} />,
+    imageUrl: 'https://picsum.photos/seed/startuptech/800/420',
     tags: ['React', 'TypeScript', 'Node.js'],
     delay: 300,
   },
   {
     key: 'p5',
-    icon: <Tablet size={40} strokeWidth={1.5} />,
+    icon: <Tablet size={22} strokeWidth={1.5} />,
+    imageUrl: 'https://picsum.photos/seed/innovateco/800/420',
     tags: ['Flutter', 'Firebase', 'Dart'],
     delay: 400,
   },
   {
     key: 'p6',
-    icon: <Settings size={40} strokeWidth={1.5} />,
+    icon: <Settings size={22} strokeWidth={1.5} />,
+    imageUrl: 'https://picsum.photos/seed/logisoft/800/420',
     tags: ['Vue.js', 'Laravel', 'MySQL'],
     delay: 500,
   },
@@ -92,25 +99,23 @@ function ProjectCard({ project }: ProjectCardProps) {
       data-aos-delay={project.delay}
       data-aos-duration="800"
     >
-      {/* ── Gradient header bar ─────────────────────────────────────────── */}
-      <div className="relative flex items-center justify-center h-40 bg-gradient-to-br from-brand/30 via-brand/15 to-transparent border-b border-brand/20 overflow-hidden">
-        {/* Inner radial glow */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 pointer-events-none"
-        >
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full bg-brand/20 blur-[60px]" />
-        </div>
+      {/* ── Screenshot header ───────────────────────────────────────────── */}
+      <div className="relative h-48 overflow-hidden border-b border-brand/20">
+        {/* Project screenshot */}
+        <img
+          src={project.imageUrl}
+          alt={t(`portfolio.${project.key}_title`)}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
 
-        {/* Category pill badge — top-left */}
-        <span className="absolute top-3 left-3 inline-flex items-center px-2.5 py-1 rounded-full bg-brand/20 border border-brand/40 text-brand text-[10px] font-semibold uppercase tracking-widest font-body backdrop-blur-sm">
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-dark-base/80 via-dark-base/20 to-transparent" />
+
+        {/* Category pill — top-left */}
+        <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-dark-base/70 border border-brand/40 text-brand text-[10px] font-semibold uppercase tracking-widest font-body backdrop-blur-sm">
+          {project.icon}
           {t(`portfolio.${project.key}_cat`)}
         </span>
-
-        {/* Icon — centered */}
-        <div className="relative z-10 text-white drop-shadow-[0_0_12px_rgba(77,187,176,0.6)] group-hover:scale-110 transition-transform duration-300">
-          {project.icon}
-        </div>
       </div>
 
       {/* ── Card body ───────────────────────────────────────────────────── */}
