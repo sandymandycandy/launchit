@@ -20,29 +20,29 @@
   },
   "services": {
     "headline": "Nos Services",
-    "subheadline": "Nous offrons une gamme complète de services numériques pour répondre à tous vos besoins en matière de développement web et logiciel.",
+    "subheadline": "Des services complets et personnalisés pour transformer votre vision en réalité numérique et propulser votre entreprise vers le succès.",
     "card_cta": "En savoir plus",
     "web": {
       "title": "Développement Web",
-      "desc": "Sites vitrines, applications web complexes et plateformes personnalisées avec les dernières technologies pour une expérience utilisateur optimale."
+      "desc": "Nous créons des sites web et applications web modernes, performants et évolutifs qui répondent parfaitement à vos besoins et dépassent vos attentes."
     },
     "mobile": {
       "title": "Applications Mobiles",
-      "desc": "Applications natives et cross-platform pour iOS et Android qui offrent une expérience utilisateur fluide et des fonctionnalités avancées."
+      "desc": "Développement d'applications mobiles natives et cross-platform pour iOS et Android, offrant une expérience utilisateur exceptionnelle."
     },
     "ecommerce": {
       "title": "Solutions E-commerce",
       "desc": "Boutiques en ligne performantes et sécurisées avec des fonctionnalités avancées pour maximiser vos ventes et fidéliser vos clients."
     },
     "software": {
-      "title": "Logiciels sur Mesure",
-      "desc": "Solutions logicielles personnalisées conçues pour automatiser vos processus métier et augmenter l'efficacité de votre entreprise."
+      "title": "Logiciels Sur Mesure",
+      "desc": "Développement de logiciels personnalisés qui répondent précisément aux besoins spécifiques de votre entreprise et optimisent vos processus."
     }
   },
   "about": {
     "headline": "Qui Sommes-Nous ?",
     "subheadline": "Nous Sommes Vos Partenaires en Innovation Numérique",
-    "desc": "Chez E-Launch IT, nous ne nous contentons pas de construire des sites web et des applications. Nous créons des solutions numériques qui résolvent des problèmes réels et stimulent la croissance de votre entreprise. Notre équipe d'experts passionnés travaille en étroite collaboration avec vous pour comprendre votre vision et la concrétiser au-delà de vos attentes.",
+    "desc": "E-LaunchIT est une agence de développement web et logiciel fondée en 2024 par une équipe de passionnés du numérique. Notre mission est de créer des solutions technologiques innovantes qui répondent aux défis des entreprises modernes. Ce qui a commencé comme une petite équipe dans un espace de coworking à Paris s'est rapidement développé pour devenir une agence reconnue dans le domaine du développement web et logiciel en France.",
     "bullet_1": "Expertise Technique Avancée",
     "bullet_2": "Approche Centrée sur le Client",
     "bullet_3": "Solutions Innovantes et Évolutives",
@@ -70,55 +70,55 @@
   "team": {
     "headline": "Notre Équipe",
     "subheadline": "Rencontrez les experts passionnés qui font de E-LaunchIT une agence de développement web et logiciel exceptionnelle.",
-    "thomas_name": "Thomas Dubois",
-    "thomas_role": "CEO & Fondateur",
+    "thomas_name": "Thomas Laurent",
+    "thomas_role": "Fondateur & CEO",
     "thomas_bio": "Avec plus de 15 ans d'expérience dans le développement web, Thomas a fondé E-LaunchIT avec la vision de créer une agence qui allie expertise technique et approche centrée sur le client.",
-    "sophie_name": "Sophie Martin",
-    "sophie_role": "CTO & Architecte Logiciel",
+    "sophie_name": "Sophie Lefevre",
+    "sophie_role": "Directrice Technique",
     "sophie_bio": "Experte en architecture logicielle et développement full-stack, Sophie supervise tous les aspects techniques des projets pour garantir des solutions robustes et évolutives.",
-    "emilie_name": "Émilie Leroy",
-    "emilie_role": "Chef de Projet",
-    "emilie_bio": "Avec son approche méthodique et sa communication claire, Émilie assure la coordination efficace des projets et maintient une relation de confiance avec les clients."
+    "emilie_name": "Émilie Bernard",
+    "emilie_role": "Lead Designer UX/UI",
+    "emilie_bio": "Avec son sens aigu du design et de l'expérience utilisateur, Émilie crée des interfaces intuitives et esthétiques qui transforment chaque interaction en une expérience mémorable."
   },
   "portfolio": {
-    "headline": "Notre Portfolio",
-    "subheadline": "Découvrez quelques-uns de nos projets récents et la façon dont nous avons aidé nos clients à atteindre leurs objectifs numériques.",
+    "headline": "Nos Projets Réalisés",
+    "subheadline": "Découvrez nos réalisations et comment nous avons aidé nos clients à atteindre leurs objectifs numériques.",
     "view_project": "Voir le Projet",
-    "view_all": "Voir Tous les Projets",
-    "p1_title": "MobiUrban App",
-    "p1_desc": "Application mobile de mobilité urbaine intégrant transports en commun, vélos et trottinettes en libre-service.",
-    "p1_cat": "Application Mobile",
-    "p2_title": "FinanceFlow Pro",
+    "view_all": "Découvrir Nos Projets",
+    "p1_title": "Site Gestion Web",
+    "p1_desc": "Application de gestion web avec dashboard analytique avancé pour suivi de campagnes marketing.",
+    "p1_cat": "Application Web",
+    "p2_title": "FinTrack",
     "p2_desc": "Logiciel de gestion financière pour PME avec tableaux de bord analytiques et prévisions budgétaires.",
-    "p2_cat": "Logiciel Sur Mesure",
-    "p3_title": "ShopElite Store",
-    "p3_desc": "Boutique en ligne haute performance avec gestion des stocks avancée et expérience d'achat optimisée.",
-    "p3_cat": "E-commerce",
-    "p4_title": "StartupTech Platform",
-    "p4_desc": "Plateforme web complexe pour une startup tech avec tableau de bord temps réel et gestion des utilisateurs.",
-    "p4_cat": "Développement Web",
-    "p5_title": "InnovateCo Mobile",
-    "p5_desc": "Application cross-platform pour iOS et Android qui a révolutionné les processus internes de l'entreprise.",
-    "p5_cat": "Application Mobile",
-    "p6_title": "LogiSoft ERP",
-    "p6_desc": "Solution ERP sur mesure qui automatise les processus métier et augmente l'efficacité opérationnelle de 40%.",
+    "p2_cat": "Logiciel",
+    "p3_title": "ArtGallery",
+    "p3_desc": "Site web pour une galerie d'art contemporain avec visite virtuelle et vente d'œuvres en ligne.",
+    "p3_cat": "Site Web",
+    "p4_title": "MedConnect",
+    "p4_desc": "Application de télémédecine permettant aux patients de consulter des médecins à distance et de gérer leurs dossiers médicaux.",
+    "p4_cat": "Application Mobile",
+    "p5_title": "EcoShop",
+    "p5_desc": "Plateforme e-commerce pour produits écologiques avec système de fidélité et livraison zéro déchet.",
+    "p5_cat": "E-commerce",
+    "p6_title": "SmartHome",
+    "p6_desc": "Système domotique intelligent pour la gestion de l'énergie et le contrôle des appareils domestiques.",
     "p6_cat": "Logiciel Sur Mesure"
   },
   "testimonials": {
     "headline": "Ce Que Nos Clients Disent",
-    "sophie_quote": "L'équipe de E-LaunchIT a complètement transformé notre présence en ligne. Leur expertise technique et leur créativité ont dépassé toutes nos attentes.",
+    "sophie_quote": "L'équipe de E-LaunchIT a complètement transformé notre présence en ligne. Notre nouveau site web est non seulement magnifique, mais aussi extrêmement performant et facile à gérer. Leur expertise et leur professionnalisme ont dépassé toutes nos attentes.",
     "sophie_name": "Sophie Martin",
     "sophie_role": "CEO, StartupTech",
-    "thomas_quote": "Travailler avec E-LaunchIT a été une expérience exceptionnelle. Ils ont développé une application mobile qui a révolutionné notre façon de travailler.",
+    "thomas_quote": "Travailler avec E-LaunchIT a été une expérience exceptionnelle. Ils ont pris le temps de comprendre notre vision et ont développé une application mobile qui a révolutionné notre façon de servir nos clients. Leur approche collaborative et leur expertise technique sont inégalées.",
     "thomas_name": "Thomas Dubois",
     "thomas_role": "Directeur, InnovateCo",
-    "marie_quote": "Notre boutique en ligne a dépassé toutes nos attentes. Les ventes ont augmenté de 200% grâce à la plateforme e-commerce qu'ils ont développée.",
+    "marie_quote": "Notre boutique en ligne développée par E-LaunchIT a dépassé toutes nos attentes. Les ventes ont augmenté de 200% en seulement trois mois. Leur équipe a été attentive à nos besoins et a créé une solution e-commerce parfaitement adaptée à notre marque.",
     "marie_name": "Marie Leroy",
     "marie_role": "Fondatrice, ShopElite"
   },
   "contact": {
     "headline": "Contactez-Nous",
-    "subheadline": "Contactez-nous dès aujourd'hui pour discuter de votre projet et découvrir comment nous pouvons vous aider à atteindre vos objectifs numériques.",
+    "subheadline": "Remplissez le formulaire ci-dessous pour nous faire part de votre projet ou de vos questions. Nous vous répondrons dans les plus brefs délais.",
     "name": "Nom complet",
     "name_placeholder": "Jean Dupont",
     "email": "Adresse email",
@@ -133,20 +133,20 @@
     "service_software": "Logiciel Sur Mesure",
     "service_other": "Autre",
     "message": "Votre message",
-    "message_placeholder": "Décrivez votre projet en quelques lignes...",
+    "message_placeholder": "Décrivez votre projet...",
     "send": "Envoyer le Message",
     "sending": "Envoi en cours...",
     "success_title": "Message envoyé !",
-    "success_desc": "Nous avons bien reçu votre message et vous répondrons dans les plus brefs délais.",
+    "success_desc": "Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.",
     "info_title": "Nos Coordonnées",
     "info_desc": "Nous sommes disponibles pour répondre à toutes vos questions.",
     "address": "Paris Île-de-France",
     "phone_num": "+33 6 51 99 06 42",
     "email_addr": "contact@launchit.fr",
     "whatsapp": "Discuter sur WhatsApp",
-    "hours_title": "Heures d'Ouverture",
-    "hours_weekdays": "Lundi – Vendredi : 9h – 18h",
-    "hours_weekend": "Samedi : 10h – 14h"
+    "hours_title": "Horaires d'Ouverture",
+    "hours_weekdays": "Lundi – Vendredi : 9h00 – 18h00",
+    "hours_weekend": "Samedi – Dimanche : Fermé"
   },
   "cta_section": {
     "headline": "Prêt à Transformer Votre Vision en Réalité ?",
@@ -154,14 +154,14 @@
     "btn": "Contactez-nous"
   },
   "footer": {
-    "tagline": "Solutions numériques innovantes pour propulser votre entreprise vers le succès.",
+    "tagline": "Votre partenaire de confiance pour des solutions numériques innovantes et sur mesure.",
     "quick_links": "Liens Rapides",
     "our_services": "Nos Services",
     "contact_us": "Contactez-Nous",
     "address": "Paris Île-de-France",
     "phone": "+33 6 51 99 06 42",
     "email": "contact@launchit.fr",
-    "copyright": "© 2026 E-LaunchIT. Tous droits réservés.",
+    "copyright": "© 2024 E-LaunchIT. Tous droits réservés.",
     "legal": "Mentions Légales",
     "privacy": "Politique de Confidentialité"
   }
