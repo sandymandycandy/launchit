@@ -4,13 +4,14 @@ import { createPopper } from '@popperjs/core';
 import { ChevronDown, Menu, X, Globe } from 'lucide-react';
 
 interface NavbarProps {
-  onLangToggle: () => void;
+  onLangChange: (lang: string) => void;
   currentLang: string;
 }
 
-export default function Navbar({ onLangToggle, currentLang }: NavbarProps) {
+export default function Navbar({ onLangChange, currentLang }: NavbarProps) {
   const { t } = useTranslation('common');
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('');
@@ -18,6 +19,8 @@ export default function Navbar({ onLangToggle, currentLang }: NavbarProps) {
   const btnRef = useRef<HTMLButtonElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const popperInstanceRef = useRef<ReturnType<typeof createPopper> | null>(null);
+  const langBtnRef = useRef<HTMLButtonElement>(null);
+  const langDropdownRef = useRef<HTMLDivElement>(null);
 
   // Scroll effect
   useEffect(() => {
@@ -66,7 +69,7 @@ export default function Navbar({ onLangToggle, currentLang }: NavbarProps) {
     }
   }, [dropdownOpen]);
 
-  // Close dropdown on outside click
+  // Close dropdowns on outside click
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (
@@ -74,6 +77,12 @@ export default function Navbar({ onLangToggle, currentLang }: NavbarProps) {
         !dropdownRef.current?.contains(e.target as Node)
       ) {
         setDropdownOpen(false);
+      }
+      if (
+        !langBtnRef.current?.contains(e.target as Node) &&
+        !langDropdownRef.current?.contains(e.target as Node)
+      ) {
+        setLangOpen(false);
       }
     };
     document.addEventListener('mousedown', handler);
@@ -178,14 +187,38 @@ export default function Navbar({ onLangToggle, currentLang }: NavbarProps) {
 
           {/* Right Side */}
           <div className="hidden lg:flex items-center gap-3">
-            {/* Language Toggle */}
-            <button
-              onClick={onLangToggle}
-              className="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-slate-300 hover:text-white border border-white/10 hover:border-brand/40 rounded-lg transition-all duration-200"
-            >
-              <Globe size={14} />
-              {currentLang.toUpperCase()}
-            </button>
+            {/* Language Dropdown */}
+            <div className="relative">
+              <button
+                ref={langBtnRef}
+                onClick={() => setLangOpen(!langOpen)}
+                className="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-slate-300 hover:text-white border border-white/10 hover:border-brand/40 rounded-lg transition-all duration-200"
+              >
+                <Globe size={14} />
+                {currentLang.toUpperCase()}
+                <ChevronDown size={12} className={`transition-transform duration-200 ${langOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {langOpen && (
+                <div
+                  ref={langDropdownRef}
+                  className="absolute right-0 top-full mt-2 w-32 bg-dark-surface/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-glass overflow-hidden z-50"
+                >
+                  {[{ code: 'fr', label: '🇫🇷 Français' }, { code: 'en', label: '🇬🇧 English' }].map(({ code, label }) => (
+                    <button
+                      key={code}
+                      onClick={() => { onLangChange(code); setLangOpen(false); }}
+                      className={`w-full text-left px-4 py-2.5 text-xs font-semibold transition-colors duration-150 border-b border-white/5 last:border-0 ${
+                        currentLang === code
+                          ? 'text-brand bg-brand/10'
+                          : 'text-slate-300 hover:text-white hover:bg-brand/10'
+                      }`}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
 
             {/* CTA Button */}
             <a href="#contact" className="btn-primary text-sm">
@@ -247,13 +280,21 @@ export default function Navbar({ onLangToggle, currentLang }: NavbarProps) {
           ))}
 
           <div className="pt-3 flex items-center gap-3">
-            <button
-              onClick={() => { onLangToggle(); setMobileOpen(false); }}
-              className="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-slate-300 border border-white/10 rounded-lg"
-            >
-              <Globe size={14} />
-              {currentLang.toUpperCase()}
-            </button>
+            <div className="flex gap-1">
+              {[{ code: 'fr', label: '🇫🇷 FR' }, { code: 'en', label: '🇬🇧 EN' }].map(({ code, label }) => (
+                <button
+                  key={code}
+                  onClick={() => { onLangChange(code); setMobileOpen(false); }}
+                  className={`flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-lg border transition-all duration-200 ${
+                    currentLang === code
+                      ? 'text-brand border-brand/40 bg-brand/10'
+                      : 'text-slate-300 border-white/10 hover:border-brand/30'
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
             <a href="#contact" onClick={() => setMobileOpen(false)} className="btn-primary text-sm flex-1 text-center">
               {t('nav.cta')}
             </a>

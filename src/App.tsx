@@ -24,16 +24,15 @@ function App() {
     AOS.init({ duration: 800, once: true, offset: 80 });
   }, []);
 
-  const handleLangToggle = () => {
-    const newLang = currentLang === 'fr' ? 'en' : 'fr';
-    i18n.changeLanguage(newLang);
-    setCurrentLang(newLang);
-    document.documentElement.lang = newLang;
+  const handleLangChange = (lang: string) => {
+    i18n.changeLanguage(lang);
+    setCurrentLang(lang);
+    document.documentElement.lang = lang;
   };
 
   return (
     <div className="min-h-screen bg-dark-base overflow-x-hidden">
-      <Navbar onLangToggle={handleLangToggle} currentLang={currentLang} />
+      <Navbar onLangChange={handleLangChange} currentLang={currentLang} />
       {/* Floating WhatsApp Button */}
       <a
         href="https://wa.me/33651990642"
