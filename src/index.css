@@ -11,7 +11,7 @@
     @apply bg-dark-base text-white font-body m-0 p-0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: 'Poppins', sans-serif;
+    background-image: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(77, 187, 176, 0.12) 0%, transparent 60%);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -21,30 +21,111 @@
   #root {
     @apply min-h-screen w-full;
   }
+
+  ::selection {
+    background: rgba(77, 187, 176, 0.3);
+    color: #fff;
+  }
 }
 
 @layer components {
+
+  /* ── Premium Glass Card ─────────────────────────────────────────────────── */
   .glass-card {
-    background: rgba(30, 41, 59, 0.4);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    @apply rounded-2xl shadow-glass transition-all duration-300;
+    @apply relative rounded-2xl transition-all duration-500;
+    background: rgba(13, 20, 36, 0.6) padding-box,
+                linear-gradient(145deg, rgba(77,187,176,0.35) 0%, rgba(255,255,255,0.04) 45%, rgba(77,187,176,0.12) 100%) border-box;
+    border: 1px solid transparent;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
   }
 
   .glass-card:hover {
-    background: rgba(30, 41, 59, 0.6);
-    border-color: rgba(53, 184, 168, 0.25);
-    transform: translateY(-5px);
-    @apply shadow-brand;
+    background: rgba(13, 20, 36, 0.75) padding-box,
+                linear-gradient(145deg, rgba(77,187,176,0.65) 0%, rgba(255,255,255,0.08) 45%, rgba(77,187,176,0.35) 100%) border-box;
+    transform: translateY(-6px);
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55), 0 0 50px rgba(77, 187, 176, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
+  /* ── Primary Button with shimmer ────────────────────────────────────────── */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-dark-base bg-brand transition-all duration-300 hover:bg-brand-light hover:shadow-brand hover:scale-105 active:scale-95;
+    @apply relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm overflow-hidden transition-all duration-300;
+    background: linear-gradient(135deg, #4DBBB0 0%, #3eaaa0 50%, #4DBBB0 100%);
+    background-size: 200% 100%;
+    color: #050B14;
+    box-shadow: 0 4px 20px rgba(77, 187, 176, 0.45), inset 0 1px 0 rgba(255,255,255,0.25);
+    font-weight: 700;
   }
 
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -120%;
+    width: 55%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+    transform: skewX(-22deg);
+    transition: left 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+  }
+
+  .btn-primary:hover {
+    background-position: right center;
+    box-shadow: 0 8px 30px rgba(77, 187, 176, 0.65), inset 0 1px 0 rgba(255,255,255,0.25);
+    transform: translateY(-2px) scale(1.03);
+  }
+
+  .btn-primary:hover::after {
+    left: 160%;
+  }
+
+  .btn-primary:active {
+    transform: translateY(0) scale(0.97);
+  }
+
+  /* ── Secondary Button ───────────────────────────────────────────────────── */
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-white border border-brand/40 bg-transparent transition-all duration-300 hover:border-brand hover:bg-brand/10 hover:shadow-brand hover:scale-105 active:scale-95;
+    @apply relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-white overflow-hidden transition-all duration-300;
+    border: 1px solid rgba(77, 187, 176, 0.35);
+    background: rgba(77, 187, 176, 0.04);
+    backdrop-filter: blur(10px);
+  }
+
+  .btn-secondary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(77, 187, 176, 0.12), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+
+  .btn-secondary:hover {
+    border-color: rgba(77, 187, 176, 0.65);
+    box-shadow: 0 0 24px rgba(77, 187, 176, 0.22), inset 0 0 24px rgba(77, 187, 176, 0.06);
+    transform: translateY(-2px) scale(1.03);
+    color: #fff;
+  }
+
+  .btn-secondary:hover::before {
+    opacity: 1;
+  }
+
+  .btn-secondary:active {
+    transform: translateY(0) scale(0.97);
+  }
+
+  /* ── Section label pill ─────────────────────────────────────────────────── */
+  .section-label {
+    @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest font-body;
+    background: rgba(77, 187, 176, 0.1);
+    border: 1px solid rgba(77, 187, 176, 0.28);
+    color: #4DBBB0;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 20px rgba(77, 187, 176, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.06);
   }
 
   .section-heading {
@@ -58,18 +139,40 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-brand to-brand-light bg-clip-text text-transparent;
+    background: linear-gradient(135deg, #4DBBB0 0%, #7DDDD6 40%, #4DBBB0 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .glow-brand {
-    text-shadow: 0 0 30px rgba(77, 187, 176, 0.6);
+    text-shadow: 0 0 30px rgba(77, 187, 176, 0.7), 0 0 60px rgba(77, 187, 176, 0.3);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 20px rgba(77, 187, 176, 0.5);
   }
 }
 
-/* AOS custom */
+/* ── AOS pointer-events fix ─────────────────────────────────────────────── */
 [data-aos] {
   pointer-events: none;
 }
 [data-aos].aos-animate {
   pointer-events: auto;
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050B14;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(77, 187, 176, 0.35);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(77, 187, 176, 0.6);
 }

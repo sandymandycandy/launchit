@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { ArrowRight, ChevronRight } from 'lucide-react';
+import { ArrowRight, ChevronRight, Sparkles } from 'lucide-react';
 
 interface StatBadge {
   value: string;
@@ -13,21 +13,11 @@ const statBadges: StatBadge[] = [
   { value: '15+', label: 'Experts', icon: '👨‍💻' },
 ];
 
-/**
- * Splits the headline string to wrap the last word (or a key word) in a
- * text-gradient span so the highlighting is purely derived from the translated
- * string — no hard-coded language check needed.
- */
 function renderHeadlineWithGradient(headline: string): React.ReactNode {
-  // Highlight the word "Innovantes" (FR) or "Innovative" (EN) — the second word
-  // of the headline. We split on that word to wrap it safely.
   const gradientWords = ['Innovantes', 'Innovative'];
-  let found = false;
-
   for (const word of gradientWords) {
     if (headline.includes(word)) {
       const parts = headline.split(word);
-      found = true;
       return (
         <>
           {parts[0]}
@@ -37,18 +27,14 @@ function renderHeadlineWithGradient(headline: string): React.ReactNode {
       );
     }
   }
-
-  if (!found) {
-    // Fallback: highlight the last word
-    const words = headline.split(' ');
-    const last = words.pop() ?? '';
-    return (
-      <>
-        {words.join(' ')}{' '}
-        <span className="text-gradient">{last}</span>
-      </>
-    );
-  }
+  const words = headline.split(' ');
+  const last = words.pop() ?? '';
+  return (
+    <>
+      {words.join(' ')}{' '}
+      <span className="text-gradient">{last}</span>
+    </>
+  );
 }
 
 export default function Hero() {
@@ -62,66 +48,87 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-dark-base bg-hero-gradient"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-dark-base"
     >
-      {/* ── Background radial teal glow ─────────────────────────────────────── */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 flex items-start justify-center"
-      >
-        <div className="w-[900px] h-[600px] rounded-full bg-brand/10 blur-[120px] -translate-y-1/4" />
+      {/* ── Layered background glows ─────────────────────────────────────────── */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        {/* Primary hero glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[700px] rounded-full bg-brand/10 blur-[140px] -translate-y-1/3" />
+        {/* Secondary accent glow */}
+        <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full bg-brand/8 blur-[120px]" />
+        {/* Right side glow */}
+        <div className="absolute top-1/2 right-0 w-[400px] h-[600px] rounded-full bg-slate-700/20 blur-[130px]" />
       </div>
 
-      {/* ── Floating orb — teal ─────────────────────────────────────────────── */}
+      {/* ── Floating orbs ────────────────────────────────────────────────────── */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-1/4 -left-32 w-80 h-80 rounded-full bg-brand/20 blur-[100px] animate-float"
+        className="pointer-events-none absolute top-1/4 -left-40 w-96 h-96 rounded-full bg-brand/15 blur-[110px] animate-float"
       />
-
-      {/* ── Floating orb — slate ────────────────────────────────────────────── */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-slate-600/20 blur-[110px] animate-[float_8s_ease-in-out_infinite_reverse]"
+        className="pointer-events-none absolute bottom-1/4 -right-40 w-[450px] h-[450px] rounded-full bg-slate-600/15 blur-[120px] animate-[float_9s_ease-in-out_infinite_reverse]"
       />
 
-      {/* ── Subtle grid overlay ─────────────────────────────────────────────── */}
+      {/* ── Fine grid overlay ────────────────────────────────────────────────── */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-[0.025]"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)',
+          backgroundSize: '64px 64px',
+        }}
+      />
+
+      {/* ── Radial vignette over grid ────────────────────────────────────────── */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
         style={{
-          backgroundImage:
-            'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
-          backgroundSize: '60px 60px',
+          background: 'radial-gradient(ellipse 80% 80% at 50% 50%, transparent 40%, rgba(5,11,20,0.8) 100%)',
         }}
       />
 
-      {/* ── Hero content ────────────────────────────────────────────────────── */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center gap-8 pt-24 pb-16">
+      {/* ── Hero content ─────────────────────────────────────────────────────── */}
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center gap-8 pt-28 pb-20">
 
-        {/* Badge / pill */}
+        {/* Badge */}
         <div
-          data-aos="fade-up"
+          data-aos="fade-down"
           data-aos-delay="0"
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand/40 bg-dark-surface/60 backdrop-blur-sm text-sm font-semibold text-brand shadow-brand"
+          className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full section-label"
         >
-          <span>🚀</span>
+          <Sparkles size={13} className="text-brand" />
           <span>Solutions Numériques</span>
-          <ChevronRight size={14} className="text-brand/70" />
+          <ChevronRight size={13} className="text-brand/60" />
         </div>
 
         {/* Headline */}
         <h1
           data-aos="fade-up"
           data-aos-delay="100"
-          className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-[1.1] tracking-tight max-w-4xl"
+          className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-[1.08] tracking-tight max-w-4xl"
         >
           {renderHeadlineWithGradient(headline)}
         </h1>
 
+        {/* Divider accent */}
+        <div
+          data-aos="fade-up"
+          data-aos-delay="180"
+          className="flex items-center gap-3"
+          aria-hidden="true"
+        >
+          <div className="w-12 h-px bg-gradient-to-r from-transparent to-brand/60" />
+          <div className="w-2 h-2 rounded-full bg-brand animate-pulse" />
+          <div className="w-12 h-px bg-gradient-to-l from-transparent to-brand/60" />
+        </div>
+
         {/* Sub-headline */}
         <p
           data-aos="fade-up"
-          data-aos-delay="200"
+          data-aos-delay="220"
           className="section-sub text-base md:text-lg max-w-2xl leading-relaxed"
         >
           {subheadline}
@@ -130,14 +137,14 @@ export default function Hero() {
         {/* CTA buttons */}
         <div
           data-aos="fade-up"
-          data-aos-delay="300"
+          data-aos-delay="320"
           className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full"
         >
-          <a href="#services" className="btn-primary text-base px-8 py-4 shadow-brand">
+          <a href="#services" className="btn-primary text-base px-9 py-4 shadow-brand">
             {ctaPrimary}
             <ArrowRight size={18} />
           </a>
-          <a href="#services" className="btn-secondary text-base px-8 py-4">
+          <a href="#portfolio" className="btn-secondary text-base px-9 py-4">
             {ctaSecondary}
           </a>
         </div>
@@ -145,8 +152,8 @@ export default function Hero() {
         {/* Stat badges row */}
         <div
           data-aos="fade-up"
-          data-aos-delay="400"
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-4 w-full"
+          data-aos-delay="440"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-2 w-full"
         >
           {statBadges.map((stat, index) => (
             <StatBadgeCard key={index} stat={stat} />
@@ -154,42 +161,39 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ── Bottom gradient fade ─────────────────────────────────────────────── */}
+      {/* ── Bottom gradient fade ──────────────────────────────────────────────── */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 left-0 right-0 h-32"
-        style={{
-          background:
-            'linear-gradient(to bottom, transparent 0%, rgba(5, 11, 20, 0.8) 100%)',
-        }}
+        className="pointer-events-none absolute bottom-0 left-0 right-0 h-40"
+        style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(5,11,20,0.95) 100%)' }}
       />
 
-      {/* ── Scroll indicator ────────────────────────────────────────────────── */}
+      {/* ── Scroll indicator ─────────────────────────────────────────────────── */}
       <div
         aria-hidden="true"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40"
       >
-        <span className="text-xs text-slate-400 tracking-widest uppercase font-body">
-          Scroll
-        </span>
-        <div className="w-px h-10 bg-gradient-to-b from-brand/60 to-transparent" />
+        <span className="text-[10px] text-slate-400 tracking-[0.3em] uppercase font-body">Scroll</span>
+        <div className="relative w-px h-12 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-brand/80 to-transparent animate-[slideDown_1.8s_ease-in-out_infinite]" />
+        </div>
       </div>
+
+      <style>{`
+        @keyframes slideDown {
+          0% { transform: translateY(-100%); opacity: 0; }
+          30% { opacity: 1; }
+          100% { transform: translateY(100%); opacity: 0; }
+        }
+      `}</style>
     </section>
   );
 }
 
-/* ── Sub-component: individual stat badge ─────────────────────────────────── */
-
-interface StatBadgeCardProps {
-  stat: StatBadge;
-}
-
-function StatBadgeCard({ stat }: StatBadgeCardProps) {
+function StatBadgeCard({ stat }: { stat: StatBadge }) {
   return (
-    <div className="glass-card flex items-center gap-3 px-5 py-3 rounded-2xl hover:shadow-brand transition-all duration-300">
-      <span className="text-2xl leading-none" aria-hidden="true">
-        {stat.icon}
-      </span>
+    <div className="glass-card flex items-center gap-3 px-5 py-3 rounded-2xl">
+      <span className="text-2xl leading-none" aria-hidden="true">{stat.icon}</span>
       <div className="flex flex-col items-start">
         <span className="font-heading font-bold text-xl text-white leading-none glow-brand">
           {stat.value}

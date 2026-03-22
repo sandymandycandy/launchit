@@ -52,15 +52,23 @@ function StatItem({ stat }: { stat: StatItem }) {
   return (
     <div
       ref={ref}
-      className="flex flex-col items-center justify-center text-center px-6 py-4 group"
+      className="flex flex-col items-center justify-center text-center px-6 py-6 group"
     >
-      <div className="font-heading font-extrabold text-4xl sm:text-5xl text-brand leading-none tracking-tight group-hover:drop-shadow-[0_0_16px_rgba(53,184,168,0.6)] transition-all duration-300">
-        {count}<span>{stat.suffix}</span>
+      <div className="font-heading font-black text-5xl sm:text-6xl leading-none tracking-tight transition-all duration-300"
+        style={{
+          background: 'linear-gradient(135deg, #4DBBB0 0%, #7DDDD6 50%, #4DBBB0 100%)',
+          WebkitBackgroundClip: 'text',
+          backgroundClip: 'text',
+          color: 'transparent',
+          filter: 'drop-shadow(0 0 20px rgba(77,187,176,0.4))',
+        }}
+      >
+        {count}<span className="text-4xl sm:text-5xl">{stat.suffix}</span>
       </div>
-      <p className="mt-3 text-slate-400 font-body text-sm sm:text-base leading-snug">
+      <p className="mt-3 text-slate-300 font-body text-sm sm:text-base leading-snug font-medium">
         {t(stat.labelKey)}
       </p>
-      <div className="mt-4 w-8 h-0.5 rounded-full bg-brand/40 group-hover:w-12 group-hover:bg-brand transition-all duration-300" />
+      <div className="mt-4 w-6 h-0.5 rounded-full bg-brand/40 group-hover:w-14 group-hover:bg-brand transition-all duration-500" />
     </div>
   );
 }
@@ -68,8 +76,8 @@ function StatItem({ stat }: { stat: StatItem }) {
 export default function Stats() {
   return (
     <section className="relative py-16 bg-dark-surface/50 overflow-hidden">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand/30 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-brand/30 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand/50 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-brand/50 to-transparent" />
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] rounded-full bg-brand/10 blur-[100px]" />
       </div>

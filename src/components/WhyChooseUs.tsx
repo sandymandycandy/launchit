@@ -78,10 +78,16 @@ export default function WhyChooseUs() {
               data-aos-delay={delay}
             >
               {/* Icon circle */}
-              <div className="w-14 h-14 rounded-2xl bg-brand/10 border border-brand/20 flex items-center justify-center flex-shrink-0 group-hover:bg-brand/20 group-hover:border-brand/40 group-hover:shadow-brand transition-all duration-300">
+              <div
+                className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-all duration-400 group-hover:scale-110 group-hover:shadow-brand"
+                style={{
+                  background: 'rgba(77,187,176,0.08) padding-box, linear-gradient(135deg,rgba(77,187,176,0.4),rgba(77,187,176,0.1)) border-box',
+                  border: '1px solid transparent',
+                }}
+              >
                 <Icon
                   size={26}
-                  className="text-brand transition-transform duration-300 group-hover:scale-110"
+                  className="text-brand transition-transform duration-300 group-hover:scale-105"
                   strokeWidth={1.75}
                 />
               </div>

@@ -26,26 +26,40 @@ function StarRating() {
 function TestimonialCard({ quote, name, role, delay }: TestimonialCardProps) {
   return (
     <div
-      className="glass-card p-8 flex flex-col gap-4 hover:shadow-brand-lg transition-all duration-300 hover:-translate-y-1"
+      className="glass-card p-8 flex flex-col gap-5 overflow-hidden"
       data-aos="fade-up"
       data-aos-delay={delay}
       data-aos-duration="700"
     >
-      {/* Quote Icon */}
-      <div className="flex items-start justify-between">
-        <Quote size={40} className="text-brand opacity-80" />
-        <StarRating />
-      </div>
+      {/* Giant background quote mark */}
+      <span
+        aria-hidden="true"
+        className="absolute -top-4 -left-1 font-heading font-black text-[9rem] text-brand/6 leading-none select-none pointer-events-none"
+      >
+        "
+      </span>
 
-      {/* Quote Text */}
-      <p className="text-slate-300 font-body text-base leading-relaxed flex-grow">
-        "{quote}"
+      {/* Stars */}
+      <StarRating />
+
+      {/* Quote text */}
+      <p className="text-slate-200 font-body text-base leading-relaxed flex-grow relative z-10">
+        {quote}
       </p>
 
+      {/* Divider */}
+      <div className="h-px bg-gradient-to-r from-brand/40 via-brand/20 to-transparent" />
+
       {/* Author */}
-      <div className="flex items-center gap-3 pt-4 border-t border-white/10">
-        <div className="w-10 h-10 rounded-full bg-brand/20 border border-brand/40 flex items-center justify-center shadow-brand flex-shrink-0">
-          <span className="text-brand font-heading font-bold text-sm">
+      <div className="flex items-center gap-3.5">
+        <div
+          className="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 shadow-brand"
+          style={{
+            background: 'linear-gradient(135deg, rgba(77,187,176,0.35), rgba(77,187,176,0.1))',
+            border: '1px solid rgba(77,187,176,0.45)',
+          }}
+        >
+          <span className="text-brand font-heading font-bold text-base">
             {name.charAt(0)}
           </span>
         </div>
@@ -53,8 +67,10 @@ function TestimonialCard({ quote, name, role, delay }: TestimonialCardProps) {
           <p className="text-white font-heading font-bold text-sm leading-tight">
             {name}
           </p>
-          <p className="text-brand text-xs font-body mt-0.5">{role}</p>
+          <p className="text-brand/80 text-xs font-body mt-0.5 tracking-wide">{role}</p>
         </div>
+        {/* Quote icon accent */}
+        <Quote size={20} className="text-brand/20 ml-auto flex-shrink-0" />
       </div>
     </div>
   );

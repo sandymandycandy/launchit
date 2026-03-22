@@ -37,8 +37,13 @@ export default {
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
+        'float-slow': 'float 9s ease-in-out infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'slide-up': 'slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'shimmer': 'shimmer 2.5s linear infinite',
+        'glow-pulse': 'glowPulse 3s ease-in-out infinite',
+        'fade-in': 'fadeIn 0.6s ease forwards',
+        'border-spin': 'borderSpin 4s linear infinite',
       },
       keyframes: {
         float: {
@@ -48,6 +53,22 @@ export default {
         slideUp: {
           '0%': { opacity: '0', transform: 'translateY(24px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% center' },
+          '100%': { backgroundPosition: '200% center' },
+        },
+        glowPulse: {
+          '0%, 100%': { boxShadow: '0 0 20px rgba(77,187,176,0.3)' },
+          '50%': { boxShadow: '0 0 40px rgba(77,187,176,0.6), 0 0 80px rgba(77,187,176,0.2)' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        borderSpin: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
         },
       },
     },
