@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "Home",
+    "solutions": "Solutions",
+    "solutions_web": "Web Development",
+    "solutions_mobile": "Mobile Apps",
+    "solutions_ecommerce": "E-commerce Solutions",
+    "solutions_software": "Custom Software",
+    "about": "About Us",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "cta": "Get a Quote"
+  },
+  "hero": {
+    "headline": "Innovative Digital Solutions For Your Business",
+    "subheadline": "We transform your ideas into digital reality with custom web and software solutions that propel your business to success.",
+    "cta_primary": "Discover Our Services",
+    "cta_secondary": "Explore Our Services"
+  },
+  "services": {
+    "headline": "Our Services",
+    "subheadline": "We offer a comprehensive range of digital services to meet all your web and software development needs.",
+    "card_cta": "Learn more",
+    "web": {
+      "title": "Web Development",
+      "desc": "Showcase websites, complex web applications, and custom platforms with the latest technologies for an optimal user experience."
+    },
+    "mobile": {
+      "title": "Mobile Apps",
+      "desc": "Native and cross-platform applications for iOS and Android that provide a seamless user experience and advanced features."
+    },
+    "ecommerce": {
+      "title": "E-commerce Solutions",
+      "desc": "High-performing and secure online stores with advanced features to maximize your sales and build customer loyalty."
+    },
+    "software": {
+      "title": "Custom Software",
+      "desc": "Custom software solutions designed to automate your business processes and increase your company's efficiency."
+    }
+  },
+  "about": {
+    "headline": "Who Are We?",
+    "subheadline": "We Are Your Partners in Digital Innovation",
+    "desc": "At E-Launch IT, we don't just build websites and applications. We create digital solutions that solve real problems and drive your business growth. Our team of passionate experts works closely with you to understand your vision and bring it to life beyond your expectations.",
+    "bullet_1": "Advanced Technical Expertise",
+    "bullet_2": "Customer-Centric Approach",
+    "bullet_3": "Innovative and Scalable Solutions",
+    "bullet_4": "Ongoing Support and Maintenance",
+    "cta": "Learn More About Us"
+  },
+  "stats": {
+    "projects": "Completed Projects",
+    "experts": "Passionate Experts",
+    "clients": "Satisfied Clients",
+    "experience": "Years of Experience"
+  },
+  "why": {
+    "headline": "Why Choose Us?",
+    "subheadline": "We combine innovation, technical expertise, and a commitment to our clients' success to deliver exceptional results.",
+    "quality_title": "Exceptional Code Quality",
+    "quality_desc": "We follow development best practices to ensure robust, secure, and easily maintainable solutions.",
+    "design_title": "Modern and Intuitive Design",
+    "design_desc": "Our interfaces are designed to be aesthetically pleasing and provide an exceptional user experience.",
+    "delivery_title": "Respected Delivery Deadlines",
+    "delivery_desc": "We understand the importance of your time and are committed to delivering your projects within the agreed timeframes.",
+    "support_title": "Personalized Support",
+    "support_desc": "From conception to launch, we are by your side to advise and guide you."
+  },
+  "testimonials": {
+    "headline": "What Our Clients Say",
+    "sophie_quote": "The E-LaunchIT team completely transformed our online presence. Their technical expertise and creativity exceeded all our expectations.",
+    "sophie_name": "Sophie Martin",
+    "sophie_role": "CEO, StartupTech",
+    "thomas_quote": "Working with E-LaunchIT has been an exceptional experience. They developed a mobile application that revolutionized the way we work.",
+    "thomas_name": "Thomas Dubois",
+    "thomas_role": "Director, InnovateCo",
+    "marie_quote": "Our online store exceeded all our expectations. Sales have increased by 200% thanks to the e-commerce platform they developed.",
+    "marie_name": "Marie Leroy",
+    "marie_role": "Founder, ShopElite"
+  },
+  "cta_section": {
+    "headline": "Ready to Turn Your Vision into Reality?",
+    "desc": "Contact us today and discover how we can help you achieve your digital objectives.",
+    "btn": "Contact Us"
+  },
+  "footer": {
+    "tagline": "Innovative digital solutions to propel your business to success.",
+    "quick_links": "Quick Links",
+    "our_services": "Our Services",
+    "contact_us": "Contact Us",
+    "address": "Paris Île-de-France",
+    "phone": "+33 6 51 99 06 42",
+    "email": "contact@launchit.fr",
+    "copyright": "© 2026 E-LaunchIT. All rights reserved.",
+    "legal": "Legal Notice",
+    "privacy": "Privacy Policy"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "solutions": "Solutions",
+    "solutions_web": "Développement Web",
+    "solutions_mobile": "Applications Mobiles",
+    "solutions_ecommerce": "Solutions E-commerce",
+    "solutions_software": "Logiciels Sur Mesure",
+    "about": "À Propos",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "cta": "Obtenir un Devis"
+  },
+  "hero": {
+    "headline": "Solutions Numériques Innovantes Pour Votre Entreprise",
+    "subheadline": "Nous transformons vos idées en réalité numérique avec des solutions web et logicielles sur mesure qui propulsent votre entreprise vers le succès.",
+    "cta_primary": "Découvrir Nos Services",
+    "cta_secondary": "Explorer Nos Services"
+  },
+  "services": {
+    "headline": "Nos Services",
+    "subheadline": "Nous offrons une gamme complète de services numériques pour répondre à tous vos besoins en matière de développement web et logiciel.",
+    "card_cta": "En savoir plus",
+    "web": {
+      "title": "Développement Web",
+      "desc": "Sites vitrines, applications web complexes et plateformes personnalisées avec les dernières technologies pour une expérience utilisateur optimale."
+    },
+    "mobile": {
+      "title": "Applications Mobiles",
+      "desc": "Applications natives et cross-platform pour iOS et Android qui offrent une expérience utilisateur fluide et des fonctionnalités avancées."
+    },
+    "ecommerce": {
+      "title": "Solutions E-commerce",
+      "desc": "Boutiques en ligne performantes et sécurisées avec des fonctionnalités avancées pour maximiser vos ventes et fidéliser vos clients."
+    },
+    "software": {
+      "title": "Logiciels sur Mesure",
+      "desc": "Solutions logicielles personnalisées conçues pour automatiser vos processus métier et augmenter l'efficacité de votre entreprise."
+    }
+  },
+  "about": {
+    "headline": "Qui Sommes-Nous ?",
+    "subheadline": "Nous Sommes Vos Partenaires en Innovation Numérique",
+    "desc": "Chez E-Launch IT, nous ne nous contentons pas de construire des sites web et des applications. Nous créons des solutions numériques qui résolvent des problèmes réels et stimulent la croissance de votre entreprise. Notre équipe d'experts passionnés travaille en étroite collaboration avec vous pour comprendre votre vision et la concrétiser au-delà de vos attentes.",
+    "bullet_1": "Expertise Technique Avancée",
+    "bullet_2": "Approche Centrée sur le Client",
+    "bullet_3": "Solutions Innovantes et Évolutives",
+    "bullet_4": "Support et Maintenance Continue",
+    "cta": "En Savoir Plus Sur Nous"
+  },
+  "stats": {
+    "projects": "Projets Réalisés",
+    "experts": "Experts Passionnés",
+    "clients": "Clients Satisfaits",
+    "experience": "Années d'Expérience"
+  },
+  "why": {
+    "headline": "Pourquoi Nous Choisir ?",
+    "subheadline": "Nous combinons innovation, expertise technique et engagement envers le succès de nos clients pour livrer des résultats exceptionnels.",
+    "quality_title": "Qualité de Code Exceptionnelle",
+    "quality_desc": "Nous suivons les meilleures pratiques de développement pour garantir des solutions robustes, sécurisées et facilement maintenables.",
+    "design_title": "Design Moderne et Intuitif",
+    "design_desc": "Nos interfaces sont conçues pour être esthétiquement plaisantes et offrir une expérience utilisateur exceptionnelle.",
+    "delivery_title": "Délais de Livraison Respectés",
+    "delivery_desc": "Nous comprenons l'importance de votre temps et nous nous engageons à livrer vos projets dans les délais convenus.",
+    "support_title": "Accompagnement Personnalisé",
+    "support_desc": "De la conception à la mise en ligne, nous sommes à vos côtés pour vous conseiller et vous guider."
+  },
+  "testimonials": {
+    "headline": "Ce Que Nos Clients Disent",
+    "sophie_quote": "L'équipe de E-LaunchIT a complètement transformé notre présence en ligne. Leur expertise technique et leur créativité ont dépassé toutes nos attentes.",
+    "sophie_name": "Sophie Martin",
+    "sophie_role": "CEO, StartupTech",
+    "thomas_quote": "Travailler avec E-LaunchIT a été une expérience exceptionnelle. Ils ont développé une application mobile qui a révolutionné notre façon de travailler.",
+    "thomas_name": "Thomas Dubois",
+    "thomas_role": "Directeur, InnovateCo",
+    "marie_quote": "Notre boutique en ligne a dépassé toutes nos attentes. Les ventes ont augmenté de 200% grâce à la plateforme e-commerce qu'ils ont développée.",
+    "marie_name": "Marie Leroy",
+    "marie_role": "Fondatrice, ShopElite"
+  },
+  "cta_section": {
+    "headline": "Prêt à Transformer Votre Vision en Réalité ?",
+    "desc": "Contactez-nous dès aujourd'hui et découvrez comment nous pouvons vous aider à atteindre vos objectifs numériques.",
+    "btn": "Contactez-nous"
+  },
+  "footer": {
+    "tagline": "Solutions numériques innovantes pour propulser votre entreprise vers le succès.",
+    "quick_links": "Liens Rapides",
+    "our_services": "Nos Services",
+    "contact_us": "Contactez-Nous",
+    "address": "Paris Île-de-France",
+    "phone": "+33 6 51 99 06 42",
+    "email": "contact@launchit.fr",
+    "copyright": "© 2026 E-LaunchIT. Tous droits réservés.",
+    "legal": "Mentions Légales",
+    "privacy": "Politique de Confidentialité"
+  }
+}
